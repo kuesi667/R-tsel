@@ -1,6 +1,6 @@
 const wordEL = document.querySelector(".word");
-const oldWordsEL = document.querySelector(".old-words");
-let words = []
+const oldWords = document.querySelector("old-words");
+let words[]
 let currentWord = ""
 let previousWords =[];
 
@@ -14,17 +14,17 @@ fetch("words.txt").then(function(response){
 
 
 function onClick() {
-    if (currentWord) {
-        previousWords.push(currentWord);
-        console.log(previousWords);
-        oldWordsEL.innerHTML = previousWords.join(", ")
-    }
-    console.log("getRandomWord");
     currentWord = getRandomWord()
-    wordEL.innerHTML = currentWord;
+    console.log("getRandomWord");
+if(currentWord){
+
+previousWords.push(currentWord);
+console.log(previousWords);
+oldWordsEL.innerHTML =previousWords.join(", ")
 }
 function getRandomNumber(maxNumber){
     return Math.floor(Math.random() * maxNumber);
+    wordEL.innerHTML = currentWord;
 }
 
 
